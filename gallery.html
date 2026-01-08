@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gallery">
+
+<header>
+    <div class="header-container">
+        <div class="logo">Firdaus's Website</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="family.html">Family</a>
+            <a href="experience.html">Experience</a>
+            <a href="education.html">Education</a>
+            <a href="gallery.html" class="active">Gallery</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Gallery</h1>
+    <p class="subtitle">Moments of my life</p>
+
+    <div class="filter-buttons">
+        <button class="active" onclick="filterGallery('all', this)">All</button>
+        <button onclick="filterGallery('friends', this)">Friends</button>
+        <button onclick="filterGallery('view', this)">View</button>
+        <button onclick="filterGallery('myself', this)">Myself</button>
+    </div> 
+
+    <div class="audio">
+    <audio controls>
+        <source src="audio/bgmusic.mp3" type="audio/mp3"> your browser does not support music element
+    </audio>
+</div>
+    <div class="gallery-grid">
+        <div class="gallery-item" data-category="friends">
+            <img src="image/kawan1.jpg" alt="kawan1">
+            <div class="gallery-overlay">campign</div>
+        </div>
+        <div class="gallery-item" data-category="friends">
+            <video src="video/kawan.mov" muted loop autoplay playsinline></video>
+            <div class="gallery-overlay">join programme together</div>
+        </div>
+        <div class="gallery-item" data-category="friends">
+            <video src="video/kawan2.mp4"alt="video kawan" muted loop autoplay playsinline></video>
+            <div class="gallery-overlay">photobooth with roomate</div>
+        </div>
+        <div class="gallery-item" data-category="friends">
+            <img src="image/kawan3.jpg" alt="kawan3">
+            <div class="gallery-overlay">hiking</div>
+        </div>
+        <div class="gallery-item" data-category="friends">
+            <img src="image/kawan4.jpg" alt="kawan4">
+            <div class="gallery-overlay">Club's members</div>
+        </div>
+        <div class="gallery-item" data-category="friends">
+            <img src="image/kawan5.jpg" alt="kawan5">
+            <div class="gallery-overlay">programme together</div>
+        </div>
+        <div class="gallery-item" data-category="friends">
+            <img src="image/kawan6.jpg" alt="kawan6">
+            <div class="gallery-overlay">photobooth</div>
+        </div>
+
+
+        <div class="gallery-item" data-category="view">
+            <img src="image/view1.jpg" alt="view1">
+            <div class="gallery-overlay">my house</div>
+        </div>
+        <div class="gallery-item" data-category="view">
+            <img src="image/view3.jpg" alt="view3">
+            <div class="gallery-overlay">Sunrise Bukit Keluang</div>
+        </div>
+        <div class="gallery-item" data-category="view">
+            <img src="image/view4.jpg" alt="view4">
+            <div class="gallery-overlay">Bukit Keluang</div>
+        </div>
+        <div class="gallery-item" data-category="view">
+            <video src="video/view1.MOV" muted loop autoplay playsinline></video>
+            <div class="gallery-overlay">Esport Match</div>
+        </div>
+        <div class="gallery-item" data-category="view">
+            <img src="image/moto1.jpg" alt="moto1">
+            <div class="gallery-overlay">My First motocycle</div>
+        </div>
+        <div class="gallery-item" data-category="view">
+            <img src="image/moto2.jpg" alt="moto2">
+            <div class="gallery-overlay">view first moto</div>
+        </div>
+        <div class="gallery-item" data-category="view">
+            <img src="image/moto3.jpg" alt="moto3">
+            <div class="gallery-overlay">current moto</div>
+        </div>
+
+
+
+        <div class="gallery-item" data-category="myself">
+            <img src="image/diri1.jpg" alt="diri1">
+            <div class="gallery-overlay">outfits formal</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/diri2.jpg" alt="diri2">
+            <div class="gallery-overlay">During Final Exam</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/diri3.jpg" alt="diri3">
+            <div class="gallery-overlay">At bukit keluang</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/diri4.jpg" alt="diri4">
+            <div class="gallery-overlay">Vocation</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/diri5.jpg" alt="diri5">
+            <div class="gallery-overlay">Holiday</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/diri6.jpg" alt="diri6">
+            <div class="gallery-overlay">someone special</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/axis2.jpg" alt="axis2">
+            <div class="gallery-overlay">axisesport</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/muka2.jpg" alt="muka2">
+            <div class="gallery-overlay">myself</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/skmembedai.jpg" alt="skmembedai">
+            <div class="gallery-overlay">primaryschool</div>
+        </div>
+        <div class="gallery-item" data-category="myself">
+            <img src="image/orc.jpg" alt="orc">
+            <div class="gallery-overlay">Beloved Club</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Firdaus Ikhwan
+</footer>
+
+<script>
+    function filterGallery(category, btn) {
+        const items = document.querySelectorAll('.gallery-item');
+        const buttons = document.querySelectorAll('.filter-buttons button');
+
+        // Remove active from all buttons
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Show/hide items
+        items.forEach(item => {
+            if(category === 'all' || item.dataset.category === category){
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>
